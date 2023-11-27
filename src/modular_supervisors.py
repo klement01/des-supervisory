@@ -72,10 +72,24 @@ class System:
         )
         alphabet = set(event for event in alphabet if event != "+C+")
 
+        # Get states.
+        states = spec["States"].split()
+
         # Make transition mappings.
         transitions = collections.defaultdict(dict)
         for transition in spec["TransRel"].split("\n"):
             s0, event, s1 = transition.split()
+
+            # In some files, states are passed as indices.
+            try:
+                s0i = int(s0)
+                s1i = int(s1)
+            except ValueError:
+                pass
+            else:
+                s0 = states[s0i - 1]
+                s1 = states[s1i - 1]
+
             transitions[s0][event] = s1
 
         # Assert there is only one initial state.
@@ -85,7 +99,7 @@ class System:
 
         return System(
             spec["@name"],
-            set(spec["States"].split()),
+            set(states),
             alphabet,
             controllable,
             dict(transitions),
