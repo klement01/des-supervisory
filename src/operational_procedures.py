@@ -55,8 +55,7 @@ class ModbusEvents:
                     if isinstance(addresses, dict):
                         addresses = [int(addresses["@address"])]
                     else:
-                        addresses = [int(address["@address"])
-                                     for address in addresses]
+                        addresses = [int(address["@address"]) for address in addresses]
 
                     # Add all addresses to appropriate dict.
                     if action_type == "Set":
@@ -80,7 +79,7 @@ class ModbusEvents:
             dict(actions_set),
             dict(triggers_negative),
             dict(triggers_positive),
-            max_address
+            max_address,
         )
 
 
@@ -114,7 +113,7 @@ class ModbusConfig:
     @staticmethod
     def from_spec(spec: dict) -> "ModbusConfig":
         """Create Modbus config from spec dictionary."""
-        host, port = spec["SlaveAddress"]["@value"].split(':')
+        host, port = spec["SlaveAddress"]["@value"].split(":")
         return ModbusConfig(
             spec["@name"],
             int(spec["TimeScale"]["@value"]),
@@ -174,11 +173,13 @@ class ModbusClient(pyModbusTCP.client.ModbusClient):
             # Positive edge.
             if now and not prev:
                 events.update(
-                    self.config.event_config.triggers_positive.get(address, []))
+                    self.config.event_config.triggers_positive.get(address, [])
+                )
             # Negative edge.
             elif not now and prev:
                 events.update(
-                    self.config.event_config.triggers_negative.get(address, []))
+                    self.config.event_config.triggers_negative.get(address, [])
+                )
 
         self.previous_state = reads
 
@@ -207,10 +208,10 @@ def __main():
         try:
             events = client.receive_events()
         except KeyboardInterrupt:
-            sel = input("> ")
-            if sel == "quit":
+            event = input("> ")
+            if event == "quit":
                 break
-            client.send_event(sel)
+            client.send_event(event)
         else:
             if len(events) > 0:
                 print(events)
