@@ -26,14 +26,14 @@ class System:
         self.uncontrollable = self.alphabet - self.controllable
 
     def step(self, event) -> str:
-        """Performs transition given event, return new state."""
-        if event not in self.alphabet:
-            return self.current_state
-
+        """
+        Performs transition given event, return new state.
+        Ignores invalid transitions.
+        """
         try:
             new_state = self.transitions[self.current_state][event]
-        except KeyError as exc:
-            raise ValueError("Invalid transition") from exc
+        except KeyError:
+            return self.current_state
 
         self.current_state = new_state
         return new_state
@@ -45,6 +45,10 @@ class System:
     def get_control_events(self) -> set[str]:
         """Return set of allowed control events from current state."""
         return self.get_valid_events().intersection(self.controllable)
+
+    def get_disabled_control_events(self) -> set[str]:
+        """Return set of all disabled control events from current state."""
+        return self.controllable - self.get_control_events()
 
     @staticmethod
     def from_file(path: pathlib.Path) -> "System":

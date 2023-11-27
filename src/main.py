@@ -8,7 +8,10 @@ for a Manufacturing Cell.
 """
 
 import argparse
+import logging
 import pathlib
+
+from product_system import start_control_loop
 
 
 def __main():
@@ -20,6 +23,9 @@ def __main():
     parser.add_argument("comm_spec", type=pathlib.Path)
     parser.add_argument("control_specs", nargs="+", type=pathlib.Path)
     args = parser.parse_args()
+
+    logging.getLogger().setLevel(logging.INFO)
+    start_control_loop(comm_spec=args.comm_spec, control_specs=args.control_specs)
 
 
 if __name__ == "__main__":

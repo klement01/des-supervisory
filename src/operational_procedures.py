@@ -135,7 +135,7 @@ class ModbusClient(pyModbusTCP.client.ModbusClient):
 
         # Gets initial state of system.
         max_address = config.event_config.max_address
-        while (initial_state := super().read_coils(0, max_address)) is None:
+        while (initial_state := super().read_coils(0, max_address + 1)) is None:
             pass
 
         self.previous_state = initial_state
