@@ -1,3 +1,7 @@
+"""
+Collect events from operational procedures interface and push
+actions dictated by modular supervisor systems.
+"""
 import logging
 from pathlib import Path
 
