@@ -1,0 +1,89 @@
+<Generator name="H7">
+
+% 
+%  Statistics for H7
+% 
+%  States:        32
+%  Init/Marked:   1/1
+%  Events:        16
+%  Transitions:   47
+%  StateSymbols:  32
+%  Attrib. E/S/T: 8/0/0
+% 
+
+<Alphabet>
+xs1_wpar      xs1_wplv      pm2_bm+       +C+           pm2_bm-       +C+          
+pm2_boff      +C+           pm2_wpar      pm2_wplv      pm2_pm+       +C+          
+pm2_pm-       +C+           pm2_poff      +C+           pm2_mon       +C+          
+pm2_moff      +C+           pm2_ps-       pm2_ps+       pm2_mrqu      pm2_mack     
+</Alphabet>
+
+<States>
+A|off|off     A|off|bm+     A|off|ws_on   A|off|waiting  A|off|pm+     A|off|ready  
+A|off|poff    A|off|mon     A|off|done    A|off|moff    A|off|pm-     A|off|north  
+A|off|waiting2  A|off|bm+2    B|off|ws_off  A|on|ws_off   A|on|off      A|off|ws_off 
+A|on|bm+      A|on|ws_on    A|on|waiting  A|on|pm+      A|on|ready    A|on|poff    
+A|on|mon      A|on|done     A|on|moff     A|on|pm-      A|on|north    A|on|waiting2 
+A|on|bm+2     B|on|ws_off  
+</States>
+
+<TransRel>
+A|off|off     pm2_bm+       A|off|bm+    
+A|off|bm+     pm2_wpar      A|off|ws_on  
+A|off|ws_on   pm2_boff      A|off|waiting 
+A|off|waiting  pm2_pm+       A|off|pm+    
+A|off|pm+     pm2_mrqu      A|off|ready  
+A|off|ready   pm2_poff      A|off|poff   
+A|off|poff    pm2_mon       A|off|mon    
+A|off|mon     pm2_mack      A|off|done   
+A|off|done    pm2_moff      A|off|moff   
+A|off|moff    pm2_pm-       A|off|pm-    
+A|off|pm-     pm2_ps-       A|off|north  
+A|off|north   pm2_poff      A|off|waiting2 
+A|off|waiting2  pm2_bm+       A|off|bm+2   
+A|off|bm+2    pm2_wplv      B|off|ws_off 
+B|off|ws_off  xs1_wpar      A|on|ws_off  
+A|on|ws_off   xs1_wplv      A|off|ws_off 
+A|on|ws_off   pm2_boff      A|on|off     
+A|on|off      xs1_wplv      A|off|off    
+A|on|off      pm2_bm+       A|on|bm+     
+A|off|ws_off  pm2_boff      A|off|off    
+A|on|bm+      xs1_wplv      A|off|bm+    
+A|on|bm+      pm2_wpar      A|on|ws_on   
+A|on|ws_on    xs1_wplv      A|off|ws_on  
+A|on|ws_on    pm2_boff      A|on|waiting 
+A|on|waiting  xs1_wplv      A|off|waiting 
+A|on|waiting  pm2_pm+       A|on|pm+     
+A|on|pm+      xs1_wplv      A|off|pm+    
+A|on|pm+      pm2_mrqu      A|on|ready   
+A|on|ready    xs1_wplv      A|off|ready  
+A|on|ready    pm2_poff      A|on|poff    
+A|on|poff     xs1_wplv      A|off|poff   
+A|on|poff     pm2_mon       A|on|mon     
+A|on|mon      xs1_wplv      A|off|mon    
+A|on|mon      pm2_mack      A|on|done    
+A|on|done     xs1_wplv      A|off|done   
+A|on|done     pm2_moff      A|on|moff    
+A|on|moff     xs1_wplv      A|off|moff   
+A|on|moff     pm2_pm-       A|on|pm-     
+A|on|pm-      xs1_wplv      A|off|pm-    
+A|on|pm-      pm2_ps-       A|on|north   
+A|on|north    xs1_wplv      A|off|north  
+A|on|north    pm2_poff      A|on|waiting2 
+A|on|waiting2  xs1_wplv      A|off|waiting2 
+A|on|waiting2  pm2_bm+       A|on|bm+2    
+A|on|bm+2     xs1_wplv      A|off|bm+2   
+A|on|bm+2     pm2_wplv      B|on|ws_off  
+B|on|ws_off   xs1_wplv      B|off|ws_off 
+</TransRel>
+
+<InitStates>
+A|off|off    
+</InitStates>
+
+<MarkedStates>
+A|off|off    
+</MarkedStates>
+
+
+</Generator>

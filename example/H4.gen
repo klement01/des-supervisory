@@ -1,0 +1,345 @@
+<Generator name="H4">
+
+% 
+%  Statistics for H4
+% 
+%  States:        145
+%  Init/Marked:   1/1
+%  Events:        24
+%  Transitions:   281
+%  StateSymbols:  145
+%  Attrib. E/S/T: 14/0/0
+% 
+
+<Alphabet>
+ds1_bm+       +C+           ds1_boff      +C+           ds1_p1s+      ds1_p1s-     
+ds1_p1m+      +C+           ds1_p1m-      +C+           ds1_p1off     +C+          
+ds1_p1wpar    ds1_p1wplv    ds1_bm-       +C+           pm1_bm+       +C+          
+pm1_bm-       +C+           pm1_boff      +C+           pm1_wpar      pm1_wplv     
+pm1_pm+       +C+           pm1_pm-       +C+           pm1_poff      +C+          
+pm1_mon       +C+           pm1_moff      +C+           pm1_ps-       pm1_ps+      
+pm1_mrqu      pm1_mack     
+</Alphabet>
+
+<States>
+A|off|off     A|bm+|off     A|ws_on|off   A|waiting|off  A|pm+|off     A|ready|off  
+A|poff|off    A|mon|off     A|done|off    A|moff|off    A|pm-|off     A|north|off  
+A|waiting2|off  A|bm+2|off    B|ws_off|off  C|ws_off|bm_on  D|ws_off|ws_on  A|off|ws_on  
+D|ws_off|ready  D|ws_off|ws_off  A|off|ws_off  D|ws_off|off  A|bm+|ws_off  A|ws_on|ws_off 
+A|waiting|ws_off  A|pm+|ws_off  A|ready|ws_off  A|poff|ws_off  A|mon|ws_off  A|done|ws_off 
+A|moff|ws_off  A|pm-|ws_off  A|north|ws_off  A|waiting2|ws_off  A|bm+2|ws_off  B|ws_off|ws_off 
+A|off|ready   D|ws_off|p1m+  A|off|p1m+    D|ws_off|done  A|off|done    D|ws_off|p1m_off 
+A|off|p1m_off  D|ws_off|ds1_p1m-  A|off|ds1_p1m-  D|ws_off|back  A|off|back    A|bm+|back   
+A|ws_on|back  A|waiting|back  A|pm+|back    A|ready|back  A|poff|back   A|mon|back   
+A|done|back   A|moff|back   A|pm-|back    A|north|back  A|waiting2|back  A|bm+2|back  
+B|ws_off|back  A|bm+|ds1_p1m-  A|ws_on|ds1_p1m-  A|waiting|ds1_p1m-  A|pm+|ds1_p1m-  A|ready|ds1_p1m- 
+A|poff|ds1_p1m-  A|mon|ds1_p1m-  A|done|ds1_p1m-  A|moff|ds1_p1m-  A|pm-|ds1_p1m-  A|north|ds1_p1m- 
+A|waiting2|ds1_p1m-  A|bm+2|ds1_p1m-  B|ws_off|ds1_p1m-  A|bm+|p1m_off  A|ws_on|p1m_off  A|waiting|p1m_off 
+A|pm+|p1m_off  A|ready|p1m_off  A|poff|p1m_off  A|mon|p1m_off  A|done|p1m_off  A|moff|p1m_off 
+A|pm-|p1m_off  A|north|p1m_off  A|waiting2|p1m_off  A|bm+2|p1m_off  B|ws_off|p1m_off  A|bm+|done   
+A|ws_on|done  A|waiting|done  A|pm+|done    A|ready|done  A|poff|done   A|mon|done   
+A|done|done   A|moff|done   A|pm-|done    A|north|done  A|waiting2|done  A|bm+2|done  
+B|ws_off|done  A|bm+|p1m+    A|ws_on|p1m+  A|waiting|p1m+  A|pm+|p1m+    A|ready|p1m+ 
+A|poff|p1m+   A|mon|p1m+    A|done|p1m+   A|moff|p1m+   A|pm-|p1m+    A|north|p1m+ 
+A|waiting2|p1m+  A|bm+2|p1m+   B|ws_off|p1m+  A|bm+|ready   A|ws_on|ready  A|waiting|ready 
+A|pm+|ready   A|ready|ready  A|poff|ready  A|mon|ready   A|done|ready  A|moff|ready 
+A|pm-|ready   A|north|ready  A|waiting2|ready  A|bm+2|ready  B|ws_off|ready  A|bm+|ws_on  
+A|ws_on|ws_on  A|waiting|ws_on  A|pm+|ws_on   A|ready|ws_on  A|poff|ws_on  A|mon|ws_on  
+A|done|ws_on  A|moff|ws_on  A|pm-|ws_on   A|north|ws_on  A|waiting2|ws_on  A|bm+2|ws_on 
+B|ws_off|ws_on 
+</States>
+
+<TransRel>
+1              pm1_bm+       2             
+2              pm1_wpar      3             
+3              pm1_boff      4             
+4              pm1_pm+       5             
+5              pm1_mrqu      6             
+6              pm1_poff      7             
+7              pm1_mon       8             
+8              pm1_mack      9             
+9              pm1_moff      10            
+10             pm1_pm-       11            
+11             pm1_ps-       12            
+12             pm1_poff      13            
+13             pm1_bm+       14            
+14             pm1_wplv      15            
+15             ds1_bm+       16            
+16             ds1_p1wpar    17            
+17             ds1_boff      19            
+17             ds1_p1wplv    20            
+17             pm1_boff      18            
+18             ds1_boff      37            
+18             ds1_p1wplv    21            
+18             pm1_bm+       132           
+19             ds1_p1m+      38            
+19             pm1_boff      37            
+20             ds1_boff      22            
+20             pm1_boff      21            
+21             ds1_boff      1             
+21             pm1_bm+       23            
+22             pm1_boff      1             
+23             ds1_boff      2             
+23             pm1_wpar      24            
+24             ds1_boff      3             
+24             pm1_boff      25            
+25             ds1_boff      4             
+25             pm1_pm+       26            
+26             ds1_boff      5             
+26             pm1_mrqu      27            
+27             ds1_boff      6             
+27             pm1_poff      28            
+28             ds1_boff      7             
+28             pm1_mon       29            
+29             ds1_boff      8             
+29             pm1_mack      30            
+30             ds1_boff      9             
+30             pm1_moff      31            
+31             ds1_boff      10            
+31             pm1_pm-       32            
+32             ds1_boff      11            
+32             pm1_ps-       33            
+33             ds1_boff      12            
+33             pm1_poff      34            
+34             ds1_boff      13            
+34             pm1_bm+       35            
+35             ds1_boff      14            
+35             pm1_wplv      36            
+36             ds1_boff      15            
+37             ds1_p1m+      39            
+37             pm1_bm+       118           
+38             ds1_p1wplv    40            
+38             pm1_boff      39            
+39             ds1_p1wplv    41            
+39             pm1_bm+       104           
+40             ds1_p1off     42            
+40             pm1_boff      41            
+41             ds1_p1off     43            
+41             pm1_bm+       90            
+42             ds1_p1m-      44            
+42             pm1_boff      43            
+43             ds1_p1m-      45            
+43             pm1_bm+       76            
+44             ds1_p1s-      46            
+44             pm1_boff      45            
+45             ds1_p1s-      47            
+45             pm1_bm+       62            
+46             ds1_p1off     22            
+46             pm1_boff      47            
+47             ds1_p1off     1             
+47             pm1_bm+       48            
+48             ds1_p1off     2             
+48             pm1_wpar      49            
+49             ds1_p1off     3             
+49             pm1_boff      50            
+50             ds1_p1off     4             
+50             pm1_pm+       51            
+51             ds1_p1off     5             
+51             pm1_mrqu      52            
+52             ds1_p1off     6             
+52             pm1_poff      53            
+53             ds1_p1off     7             
+53             pm1_mon       54            
+54             ds1_p1off     8             
+54             pm1_mack      55            
+55             ds1_p1off     9             
+55             pm1_moff      56            
+56             ds1_p1off     10            
+56             pm1_pm-       57            
+57             ds1_p1off     11            
+57             pm1_ps-       58            
+58             ds1_p1off     12            
+58             pm1_poff      59            
+59             ds1_p1off     13            
+59             pm1_bm+       60            
+60             ds1_p1off     14            
+60             pm1_wplv      61            
+61             ds1_p1off     15            
+62             ds1_p1s-      48            
+62             pm1_wpar      63            
+63             ds1_p1s-      49            
+63             pm1_boff      64            
+64             ds1_p1s-      50            
+64             pm1_pm+       65            
+65             ds1_p1s-      51            
+65             pm1_mrqu      66            
+66             ds1_p1s-      52            
+66             pm1_poff      67            
+67             ds1_p1s-      53            
+67             pm1_mon       68            
+68             ds1_p1s-      54            
+68             pm1_mack      69            
+69             ds1_p1s-      55            
+69             pm1_moff      70            
+70             ds1_p1s-      56            
+70             pm1_pm-       71            
+71             ds1_p1s-      57            
+71             pm1_ps-       72            
+72             ds1_p1s-      58            
+72             pm1_poff      73            
+73             ds1_p1s-      59            
+73             pm1_bm+       74            
+74             ds1_p1s-      60            
+74             pm1_wplv      75            
+75             ds1_p1s-      61            
+76             ds1_p1m-      62            
+76             pm1_wpar      77            
+77             ds1_p1m-      63            
+77             pm1_boff      78            
+78             ds1_p1m-      64            
+78             pm1_pm+       79            
+79             ds1_p1m-      65            
+79             pm1_mrqu      80            
+80             ds1_p1m-      66            
+80             pm1_poff      81            
+81             ds1_p1m-      67            
+81             pm1_mon       82            
+82             ds1_p1m-      68            
+82             pm1_mack      83            
+83             ds1_p1m-      69            
+83             pm1_moff      84            
+84             ds1_p1m-      70            
+84             pm1_pm-       85            
+85             ds1_p1m-      71            
+85             pm1_ps-       86            
+86             ds1_p1m-      72            
+86             pm1_poff      87            
+87             ds1_p1m-      73            
+87             pm1_bm+       88            
+88             ds1_p1m-      74            
+88             pm1_wplv      89            
+89             ds1_p1m-      75            
+90             ds1_p1off     76            
+90             pm1_wpar      91            
+91             ds1_p1off     77            
+91             pm1_boff      92            
+92             ds1_p1off     78            
+92             pm1_pm+       93            
+93             ds1_p1off     79            
+93             pm1_mrqu      94            
+94             ds1_p1off     80            
+94             pm1_poff      95            
+95             ds1_p1off     81            
+95             pm1_mon       96            
+96             ds1_p1off     82            
+96             pm1_mack      97            
+97             ds1_p1off     83            
+97             pm1_moff      98            
+98             ds1_p1off     84            
+98             pm1_pm-       99            
+99             ds1_p1off     85            
+99             pm1_ps-       100           
+100            ds1_p1off     86            
+100            pm1_poff      101           
+101            ds1_p1off     87            
+101            pm1_bm+       102           
+102            ds1_p1off     88            
+102            pm1_wplv      103           
+103            ds1_p1off     89            
+104            ds1_p1wplv    90            
+104            pm1_wpar      105           
+105            ds1_p1wplv    91            
+105            pm1_boff      106           
+106            ds1_p1wplv    92            
+106            pm1_pm+       107           
+107            ds1_p1wplv    93            
+107            pm1_mrqu      108           
+108            ds1_p1wplv    94            
+108            pm1_poff      109           
+109            ds1_p1wplv    95            
+109            pm1_mon       110           
+110            ds1_p1wplv    96            
+110            pm1_mack      111           
+111            ds1_p1wplv    97            
+111            pm1_moff      112           
+112            ds1_p1wplv    98            
+112            pm1_pm-       113           
+113            ds1_p1wplv    99            
+113            pm1_ps-       114           
+114            ds1_p1wplv    100           
+114            pm1_poff      115           
+115            ds1_p1wplv    101           
+115            pm1_bm+       116           
+116            ds1_p1wplv    102           
+116            pm1_wplv      117           
+117            ds1_p1wplv    103           
+118            ds1_p1m+      104           
+118            pm1_wpar      119           
+119            ds1_p1m+      105           
+119            pm1_boff      120           
+120            ds1_p1m+      106           
+120            pm1_pm+       121           
+121            ds1_p1m+      107           
+121            pm1_mrqu      122           
+122            ds1_p1m+      108           
+122            pm1_poff      123           
+123            ds1_p1m+      109           
+123            pm1_mon       124           
+124            ds1_p1m+      110           
+124            pm1_mack      125           
+125            ds1_p1m+      111           
+125            pm1_moff      126           
+126            ds1_p1m+      112           
+126            pm1_pm-       127           
+127            ds1_p1m+      113           
+127            pm1_ps-       128           
+128            ds1_p1m+      114           
+128            pm1_poff      129           
+129            ds1_p1m+      115           
+129            pm1_bm+       130           
+130            ds1_p1m+      116           
+130            pm1_wplv      131           
+131            ds1_p1m+      117           
+132            ds1_boff      118           
+132            ds1_p1wplv    23            
+132            pm1_wpar      133           
+133            ds1_boff      119           
+133            ds1_p1wplv    24            
+133            pm1_boff      134           
+134            ds1_boff      120           
+134            ds1_p1wplv    25            
+134            pm1_pm+       135           
+135            ds1_boff      121           
+135            ds1_p1wplv    26            
+135            pm1_mrqu      136           
+136            ds1_boff      122           
+136            ds1_p1wplv    27            
+136            pm1_poff      137           
+137            ds1_boff      123           
+137            ds1_p1wplv    28            
+137            pm1_mon       138           
+138            ds1_boff      124           
+138            ds1_p1wplv    29            
+138            pm1_mack      139           
+139            ds1_boff      125           
+139            ds1_p1wplv    30            
+139            pm1_moff      140           
+140            ds1_boff      126           
+140            ds1_p1wplv    31            
+140            pm1_pm-       141           
+141            ds1_boff      127           
+141            ds1_p1wplv    32            
+141            pm1_ps-       142           
+142            ds1_boff      128           
+142            ds1_p1wplv    33            
+142            pm1_poff      143           
+143            ds1_boff      129           
+143            ds1_p1wplv    34            
+143            pm1_bm+       144           
+144            ds1_boff      130           
+144            ds1_p1wplv    35            
+144            pm1_wplv      145           
+145            ds1_boff      131           
+145            ds1_p1wplv    36            
+</TransRel>
+
+<InitStates>
+A|off|off    
+</InitStates>
+
+<MarkedStates>
+A|off|off    
+</MarkedStates>
+
+
+</Generator>

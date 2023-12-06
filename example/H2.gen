@@ -1,0 +1,342 @@
+<Generator name="H2">
+
+% 
+%  Statistics for H2
+% 
+%  States:        90
+%  Init/Marked:   1/2
+%  Events:        13
+%  Transitions:   291
+%  StateSymbols:  90
+%  Attrib. E/S/T: 6/0/0
+% 
+
+<Alphabet>
+sf1_fdon      +C+           sf1_fdoff     +C+           sf1_fdhome    sf1_wpar     
+sf1_wplv      op_s1act      op_s1rel      op_l1on       +C+           op_l1off     
++C+           op_s2act      op_s2rel      op_l2on       +C+           op_l2off     
++C+          
+</Alphabet>
+
+<States>
+A|off|off|off  A|off|ready|off  A|off|off|held  A|held|off|off  B|on|off|off  A|held|ready|off 
+A|held|off|held  B|held|off|on  B|on|off|held  A|held|ready|held  B|held|ready|on  B|on|ready|held 
+A|off|ready|held  B|off|ready|on  A|off|on|on   B|off|ready|off  A|off|on|off  B|off|ready|held 
+B|held|ready|off  A|held|on|off  B|held|ready|held  A|held|on|held  B|held|on|on  B|on|on|held 
+A|held|on2|held  A|off|on|held  B|off|on|on   A|off|on2|held  B|off|on2|on  A|off|done|held 
+A|off|on2|off  A|off|done|off  A|held|on2|off  B|on|on2|off  A|held|done|off  B|on|done|off 
+A|held|done|held  B|held|done|on  B|on|done|held  B|off|done|held  B|off|off|held  B|off|done|off 
+B|held|done|held  B|held|off|held  B|held|done|off  B|held|off|off  B|off|off|off  B|off|done|on 
+B|off|off|on  B|on|on2|held  B|off|on2|off  B|off|on2|held  B|held|on2|off  B|held|on2|held 
+B|held|on2|on  B|off|on|off  B|off|on|held  B|held|on|off  B|held|on|held  B|on|on|off  
+A|off|on2|on  A|held|on|on  B|on|on|on    A|held|on2|on  B|on|on2|on   A|held|done|on 
+B|on|done|on  A|held|off|on  A|off|done|on  A|off|off|on  A|off|ready|on  A|held|ready|on 
+B|on|ready|on  A|on|on|on    B|on|ready|off  A|on|on|off   A|on|on2|off  A|on|on|held 
+A|on|on2|held  A|on|done|held  A|on|off|held  A|on|done|off  A|on|off|off  A|on|ready|off 
+A|on|ready|held  B|on|off|on   A|on|on2|on   A|on|done|on  A|on|off|on   A|on|ready|on 
+</States>
+
+<TransRel>
+A|off|off|off  sf1_wpar      A|off|ready|off 
+A|off|off|off  op_s1act      A|off|off|held 
+A|off|off|off  op_s2act      A|held|off|off 
+A|off|ready|off  op_s1act      A|off|ready|held 
+A|off|ready|off  op_s2act      A|held|ready|off 
+A|off|off|held  sf1_wpar      A|off|ready|held 
+A|off|off|held  op_s1rel      A|off|off|off 
+A|off|off|held  op_l1on       B|off|off|on 
+A|off|off|held  op_s2act      A|held|off|held 
+A|held|off|off  sf1_wpar      A|held|ready|off 
+A|held|off|off  op_s1act      A|held|off|held 
+A|held|off|off  op_s2rel      A|off|off|off 
+A|held|off|off  op_l2on       B|on|off|off 
+B|on|off|off  sf1_wpar      B|on|ready|off 
+B|on|off|off  op_s1act      B|on|off|held 
+B|on|off|off  op_l2off      B|off|off|off 
+A|held|ready|off  op_s1act      A|held|ready|held 
+A|held|ready|off  op_s2rel      A|off|ready|off 
+A|held|ready|off  op_l2on       B|on|ready|off 
+A|held|off|held  sf1_wpar      A|held|ready|held 
+A|held|off|held  op_s1rel      A|held|off|off 
+A|held|off|held  op_l1on       B|held|off|on 
+A|held|off|held  op_s2rel      A|off|off|held 
+A|held|off|held  op_l2on       B|on|off|held 
+B|held|off|on  sf1_wpar      B|held|ready|on 
+B|held|off|on  op_l1off      B|held|off|off 
+B|held|off|on  op_s2rel      B|off|off|on 
+B|on|off|held  sf1_wpar      B|on|ready|held 
+B|on|off|held  op_s1rel      B|on|off|off 
+B|on|off|held  op_l2off      B|off|off|held 
+A|held|ready|held  op_s1rel      A|held|ready|off 
+A|held|ready|held  op_l1on       B|held|ready|on 
+A|held|ready|held  op_s2rel      A|off|ready|held 
+A|held|ready|held  op_l2on       B|on|ready|held 
+B|held|ready|on  sf1_fdon      A|held|on|on 
+B|held|ready|on  op_l1off      B|held|ready|off 
+B|held|ready|on  op_s2rel      B|off|ready|on 
+B|on|ready|held  sf1_fdon      A|on|on|held 
+B|on|ready|held  op_s1rel      B|on|ready|off 
+B|on|ready|held  op_l2off      B|off|ready|held 
+A|off|ready|held  op_s1rel      A|off|ready|off 
+A|off|ready|held  op_l1on       B|off|ready|on 
+A|off|ready|held  op_s2act      A|held|ready|held 
+B|off|ready|on  sf1_fdon      A|off|on|on  
+B|off|ready|on  op_l1off      B|off|ready|off 
+B|off|ready|on  op_s2act      B|held|ready|on 
+A|off|on|on   sf1_wplv      A|off|on2|on 
+A|off|on|on   op_l1off      A|off|on|off 
+A|off|on|on   op_s2act      A|held|on|on 
+B|off|ready|off  sf1_fdon      A|off|on|off 
+B|off|ready|off  op_s1act      B|off|ready|held 
+B|off|ready|off  op_s2act      B|held|ready|off 
+A|off|on|off  sf1_wplv      A|off|on2|off 
+A|off|on|off  op_s1act      A|off|on|held 
+A|off|on|off  op_s2act      A|held|on|off 
+B|off|ready|held  sf1_fdon      A|off|on|held 
+B|off|ready|held  op_s1rel      B|off|ready|off 
+B|off|ready|held  op_s2act      B|held|ready|held 
+B|held|ready|off  sf1_fdon      A|held|on|off 
+B|held|ready|off  op_s1act      B|held|ready|held 
+B|held|ready|off  op_s2rel      B|off|ready|off 
+A|held|on|off  sf1_wplv      A|held|on2|off 
+A|held|on|off  op_s1act      A|held|on|held 
+A|held|on|off  op_s2rel      A|off|on|off 
+A|held|on|off  op_l2on       B|on|on|off  
+B|held|ready|held  sf1_fdon      A|held|on|held 
+B|held|ready|held  op_s1rel      B|held|ready|off 
+B|held|ready|held  op_s2rel      B|off|ready|held 
+A|held|on|held  sf1_wplv      A|held|on2|held 
+A|held|on|held  op_s1rel      A|held|on|off 
+A|held|on|held  op_l1on       B|held|on|on 
+A|held|on|held  op_s2rel      A|off|on|held 
+A|held|on|held  op_l2on       B|on|on|held 
+B|held|on|on  sf1_wplv      B|held|on2|on 
+B|held|on|on  op_l1off      B|held|on|off 
+B|held|on|on  op_s2rel      B|off|on|on  
+B|on|on|held  sf1_wplv      B|on|on2|held 
+B|on|on|held  op_s1rel      B|on|on|off  
+B|on|on|held  op_l2off      B|off|on|held 
+A|held|on2|held  sf1_fdhome    A|held|done|held 
+A|held|on2|held  op_s1rel      A|held|on2|off 
+A|held|on2|held  op_l1on       B|held|on2|on 
+A|held|on2|held  op_s2rel      A|off|on2|held 
+A|held|on2|held  op_l2on       B|on|on2|held 
+A|off|on|held  sf1_wplv      A|off|on2|held 
+A|off|on|held  op_s1rel      A|off|on|off 
+A|off|on|held  op_l1on       B|off|on|on  
+A|off|on|held  op_s2act      A|held|on|held 
+B|off|on|on   sf1_wplv      B|off|on2|on 
+B|off|on|on   op_l1off      B|off|on|off 
+B|off|on|on   op_s2act      B|held|on|on 
+A|off|on2|held  sf1_fdhome    A|off|done|held 
+A|off|on2|held  op_s1rel      A|off|on2|off 
+A|off|on2|held  op_l1on       B|off|on2|on 
+A|off|on2|held  op_s2act      A|held|on2|held 
+B|off|on2|on  sf1_fdhome    B|off|done|on 
+B|off|on2|on  op_l1off      B|off|on2|off 
+B|off|on2|on  op_s2act      B|held|on2|on 
+A|off|done|held  sf1_fdoff     A|off|off|held 
+A|off|done|held  op_s1rel      A|off|done|off 
+A|off|done|held  op_l1on       B|off|done|on 
+A|off|done|held  op_s2act      A|held|done|held 
+A|off|on2|off  sf1_fdhome    A|off|done|off 
+A|off|on2|off  op_s1act      A|off|on2|held 
+A|off|on2|off  op_s2act      A|held|on2|off 
+A|off|done|off  sf1_fdoff     A|off|off|off 
+A|off|done|off  op_s1act      A|off|done|held 
+A|off|done|off  op_s2act      A|held|done|off 
+A|held|on2|off  sf1_fdhome    A|held|done|off 
+A|held|on2|off  op_s1act      A|held|on2|held 
+A|held|on2|off  op_s2rel      A|off|on2|off 
+A|held|on2|off  op_l2on       B|on|on2|off 
+B|on|on2|off  sf1_fdhome    B|on|done|off 
+B|on|on2|off  op_s1act      B|on|on2|held 
+B|on|on2|off  op_l2off      B|off|on2|off 
+A|held|done|off  sf1_fdoff     A|held|off|off 
+A|held|done|off  op_s1act      A|held|done|held 
+A|held|done|off  op_s2rel      A|off|done|off 
+A|held|done|off  op_l2on       B|on|done|off 
+B|on|done|off  sf1_fdoff     B|on|off|off 
+B|on|done|off  op_s1act      B|on|done|held 
+B|on|done|off  op_l2off      B|off|done|off 
+A|held|done|held  sf1_fdoff     A|held|off|held 
+A|held|done|held  op_s1rel      A|held|done|off 
+A|held|done|held  op_l1on       B|held|done|on 
+A|held|done|held  op_s2rel      A|off|done|held 
+A|held|done|held  op_l2on       B|on|done|held 
+B|held|done|on  sf1_fdoff     B|held|off|on 
+B|held|done|on  op_l1off      B|held|done|off 
+B|held|done|on  op_s2rel      B|off|done|on 
+B|on|done|held  sf1_fdoff     B|on|off|held 
+B|on|done|held  op_s1rel      B|on|done|off 
+B|on|done|held  op_l2off      B|off|done|held 
+B|off|done|held  sf1_fdoff     B|off|off|held 
+B|off|done|held  op_s1rel      B|off|done|off 
+B|off|done|held  op_s2act      B|held|done|held 
+B|off|off|held  sf1_wpar      B|off|ready|held 
+B|off|off|held  op_s1rel      B|off|off|off 
+B|off|off|held  op_s2act      B|held|off|held 
+B|off|done|off  sf1_fdoff     B|off|off|off 
+B|off|done|off  op_s1act      B|off|done|held 
+B|off|done|off  op_s2act      B|held|done|off 
+B|held|done|held  sf1_fdoff     B|held|off|held 
+B|held|done|held  op_s1rel      B|held|done|off 
+B|held|done|held  op_s2rel      B|off|done|held 
+B|held|off|held  sf1_wpar      B|held|ready|held 
+B|held|off|held  op_s1rel      B|held|off|off 
+B|held|off|held  op_s2rel      B|off|off|held 
+B|held|done|off  sf1_fdoff     B|held|off|off 
+B|held|done|off  op_s1act      B|held|done|held 
+B|held|done|off  op_s2rel      B|off|done|off 
+B|held|off|off  sf1_wpar      B|held|ready|off 
+B|held|off|off  op_s1act      B|held|off|held 
+B|held|off|off  op_s2rel      B|off|off|off 
+B|off|off|off  sf1_wpar      B|off|ready|off 
+B|off|off|off  op_s1act      B|off|off|held 
+B|off|off|off  op_s2act      B|held|off|off 
+B|off|done|on  sf1_fdoff     B|off|off|on 
+B|off|done|on  op_l1off      B|off|done|off 
+B|off|done|on  op_s2act      B|held|done|on 
+B|off|off|on  sf1_wpar      B|off|ready|on 
+B|off|off|on  op_l1off      B|off|off|off 
+B|off|off|on  op_s2act      B|held|off|on 
+B|on|on2|held  sf1_fdhome    B|on|done|held 
+B|on|on2|held  op_s1rel      B|on|on2|off 
+B|on|on2|held  op_l2off      B|off|on2|held 
+B|off|on2|off  sf1_fdhome    B|off|done|off 
+B|off|on2|off  op_s1act      B|off|on2|held 
+B|off|on2|off  op_s2act      B|held|on2|off 
+B|off|on2|held  sf1_fdhome    B|off|done|held 
+B|off|on2|held  op_s1rel      B|off|on2|off 
+B|off|on2|held  op_s2act      B|held|on2|held 
+B|held|on2|off  sf1_fdhome    B|held|done|off 
+B|held|on2|off  op_s1act      B|held|on2|held 
+B|held|on2|off  op_s2rel      B|off|on2|off 
+B|held|on2|held  sf1_fdhome    B|held|done|held 
+B|held|on2|held  op_s1rel      B|held|on2|off 
+B|held|on2|held  op_s2rel      B|off|on2|held 
+B|held|on2|on  sf1_fdhome    B|held|done|on 
+B|held|on2|on  op_l1off      B|held|on2|off 
+B|held|on2|on  op_s2rel      B|off|on2|on 
+B|off|on|off  sf1_wplv      B|off|on2|off 
+B|off|on|off  op_s1act      B|off|on|held 
+B|off|on|off  op_s2act      B|held|on|off 
+B|off|on|held  sf1_wplv      B|off|on2|held 
+B|off|on|held  op_s1rel      B|off|on|off 
+B|off|on|held  op_s2act      B|held|on|held 
+B|held|on|off  sf1_wplv      B|held|on2|off 
+B|held|on|off  op_s1act      B|held|on|held 
+B|held|on|off  op_s2rel      B|off|on|off 
+B|held|on|held  sf1_wplv      B|held|on2|held 
+B|held|on|held  op_s1rel      B|held|on|off 
+B|held|on|held  op_s2rel      B|off|on|held 
+B|on|on|off   sf1_wplv      B|on|on2|off 
+B|on|on|off   op_s1act      B|on|on|held 
+B|on|on|off   op_l2off      B|off|on|off 
+A|off|on2|on  sf1_fdhome    A|off|done|on 
+A|off|on2|on  op_l1off      A|off|on2|off 
+A|off|on2|on  op_s2act      A|held|on2|on 
+A|held|on|on  sf1_wplv      A|held|on2|on 
+A|held|on|on  op_l1off      A|held|on|off 
+A|held|on|on  op_s2rel      A|off|on|on  
+A|held|on|on  op_l2on       B|on|on|on   
+B|on|on|on    sf1_wplv      B|on|on2|on  
+B|on|on|on    op_l1off      B|on|on|off  
+B|on|on|on    op_l2off      B|off|on|on  
+A|held|on2|on  sf1_fdhome    A|held|done|on 
+A|held|on2|on  op_l1off      A|held|on2|off 
+A|held|on2|on  op_s2rel      A|off|on2|on 
+A|held|on2|on  op_l2on       B|on|on2|on  
+B|on|on2|on   sf1_fdhome    B|on|done|on 
+B|on|on2|on   op_l1off      B|on|on2|off 
+B|on|on2|on   op_l2off      B|off|on2|on 
+A|held|done|on  sf1_fdoff     A|held|off|on 
+A|held|done|on  op_l1off      A|held|done|off 
+A|held|done|on  op_s2rel      A|off|done|on 
+A|held|done|on  op_l2on       B|on|done|on 
+B|on|done|on  sf1_fdoff     B|on|off|on  
+B|on|done|on  op_l1off      B|on|done|off 
+B|on|done|on  op_l2off      B|off|done|on 
+A|held|off|on  sf1_wpar      A|held|ready|on 
+A|held|off|on  op_l1off      A|held|off|off 
+A|held|off|on  op_s2rel      A|off|off|on 
+A|held|off|on  op_l2on       B|on|off|on  
+A|off|done|on  sf1_fdoff     A|off|off|on 
+A|off|done|on  op_l1off      A|off|done|off 
+A|off|done|on  op_s2act      A|held|done|on 
+A|off|off|on  sf1_wpar      A|off|ready|on 
+A|off|off|on  op_l1off      A|off|off|off 
+A|off|off|on  op_s2act      A|held|off|on 
+A|off|ready|on  op_l1off      A|off|ready|off 
+A|off|ready|on  op_s2act      A|held|ready|on 
+A|held|ready|on  op_l1off      A|held|ready|off 
+A|held|ready|on  op_s2rel      A|off|ready|on 
+A|held|ready|on  op_l2on       B|on|ready|on 
+B|on|ready|on  sf1_fdon      A|on|on|on   
+B|on|ready|on  op_l1off      B|on|ready|off 
+B|on|ready|on  op_l2off      B|off|ready|on 
+A|on|on|on    sf1_wplv      A|on|on2|on  
+A|on|on|on    op_l1off      A|on|on|off  
+A|on|on|on    op_l2off      A|off|on|on  
+B|on|ready|off  sf1_fdon      A|on|on|off  
+B|on|ready|off  op_s1act      B|on|ready|held 
+B|on|ready|off  op_l2off      B|off|ready|off 
+A|on|on|off   sf1_wplv      A|on|on2|off 
+A|on|on|off   op_s1act      A|on|on|held 
+A|on|on|off   op_l2off      A|off|on|off 
+A|on|on2|off  sf1_fdhome    A|on|done|off 
+A|on|on2|off  op_s1act      A|on|on2|held 
+A|on|on2|off  op_l2off      A|off|on2|off 
+A|on|on|held  sf1_wplv      A|on|on2|held 
+A|on|on|held  op_s1rel      A|on|on|off  
+A|on|on|held  op_l1on       B|on|on|on   
+A|on|on|held  op_l2off      A|off|on|held 
+A|on|on2|held  sf1_fdhome    A|on|done|held 
+A|on|on2|held  op_s1rel      A|on|on2|off 
+A|on|on2|held  op_l1on       B|on|on2|on  
+A|on|on2|held  op_l2off      A|off|on2|held 
+A|on|done|held  sf1_fdoff     A|on|off|held 
+A|on|done|held  op_s1rel      A|on|done|off 
+A|on|done|held  op_l1on       B|on|done|on 
+A|on|done|held  op_l2off      A|off|done|held 
+A|on|off|held  sf1_wpar      A|on|ready|held 
+A|on|off|held  op_s1rel      A|on|off|off 
+A|on|off|held  op_l1on       B|on|off|on  
+A|on|off|held  op_l2off      A|off|off|held 
+A|on|done|off  sf1_fdoff     A|on|off|off 
+A|on|done|off  op_s1act      A|on|done|held 
+A|on|done|off  op_l2off      A|off|done|off 
+A|on|off|off  sf1_wpar      A|on|ready|off 
+A|on|off|off  op_s1act      A|on|off|held 
+A|on|off|off  op_l2off      A|off|off|off 
+A|on|ready|off  op_s1act      A|on|ready|held 
+A|on|ready|off  op_l2off      A|off|ready|off 
+A|on|ready|held  op_s1rel      A|on|ready|off 
+A|on|ready|held  op_l1on       B|on|ready|on 
+A|on|ready|held  op_l2off      A|off|ready|held 
+B|on|off|on   sf1_wpar      B|on|ready|on 
+B|on|off|on   op_l1off      B|on|off|off 
+B|on|off|on   op_l2off      B|off|off|on 
+A|on|on2|on   sf1_fdhome    A|on|done|on 
+A|on|on2|on   op_l1off      A|on|on2|off 
+A|on|on2|on   op_l2off      A|off|on2|on 
+A|on|done|on  sf1_fdoff     A|on|off|on  
+A|on|done|on  op_l1off      A|on|done|off 
+A|on|done|on  op_l2off      A|off|done|on 
+A|on|off|on   sf1_wpar      A|on|ready|on 
+A|on|off|on   op_l1off      A|on|off|off 
+A|on|off|on   op_l2off      A|off|off|on 
+A|on|ready|on  op_l1off      A|on|ready|off 
+A|on|ready|on  op_l2off      A|off|ready|on 
+</TransRel>
+
+<InitStates>
+A|off|off|off 
+</InitStates>
+
+<MarkedStates>
+A|off|off|off  B|off|off|off 
+</MarkedStates>
+
+
+</Generator>

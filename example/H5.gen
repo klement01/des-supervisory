@@ -1,0 +1,172 @@
+<Generator name="H5">
+
+% 
+%  Statistics for H5
+% 
+%  States:        57
+%  Init/Marked:   1/2
+%  Events:        14
+%  Transitions:   126
+%  StateSymbols:  57
+%  Attrib. E/S/T: 8/0/0
+% 
+
+<Alphabet>
+ds1_bm+       +C+           ds1_boff      +C+           ds1_p1s+      ds1_p1s-     
+ds1_p1m+      +C+           ds1_p1m-      +C+           ds1_p1off     +C+          
+ds1_p1wpar    ds1_p1wplv    ds1_bm-       +C+           op_s2act      op_s2rel     
+op_l2on       +C+           op_l2off      +C+          
+</Alphabet>
+
+<States>
+A|off|off#1   A|bm_on|off#2  A|off|held#3  B|off|on#4    A|bm_on|held#5  B|bm_on|on#6 
+A|ws_on|held#7  A|ready|held#8  A|ws_off|held#9  B|ws_on|on#10  A|ws_on|off#11  A|ready|off#12 
+A|ws_off|off#13  A|p1m+|off#14  A|done|off#15  A|p1m+|held#16  A|done|held#17  B|p1m+|on#18 
+A|done|on#19  B|p1m+|off#20  B|p1m+|held#21  A|p1m_off|on#22  A|ds1_p1m-|on#23  A|p1m_off|off#24 
+A|ds1_p1m-|off#25  A|p1m_off|held#26  B|p1m_off|on#27  A|ds1_p1m-|held#28  B|ds1_p1m-|on#29  A|back|held#30 
+B|back|on#31  A|back|off#32  B|back|off#33  B|off|off#34  B|back|held#35  B|off|held#36 
+B|bm_on|held#37  B|ws_on|held#38  B|bm_on|off#39  B|ws_on|off#40  B|ds1_p1m-|off#41  B|ds1_p1m-|held#42 
+B|p1m_off|off#43  B|p1m_off|held#44  A|back|on#45  A|off|on#46   A|bm_on|on#47  A|ws_on|on#48 
+A|ready|on#49  A|ws_off|on#50  A|p1m+|on#51  B|done|on#52  B|done|off#53  B|done|held#54 
+B|ready|on#58  B|ready|off#59  B|ready|held#60 
+</States>
+
+<TransRel>
+A|off|off     ds1_bm+       A|bm_on|off  
+A|off|off     op_s2act      A|off|held   
+A|bm_on|off   ds1_p1wpar    A|ws_on|off  
+A|bm_on|off   op_s2act      A|bm_on|held 
+A|off|held    ds1_bm+       A|bm_on|held 
+A|off|held    op_s2rel      A|off|off    
+A|off|held    op_l2on       B|off|on     
+B|off|on      ds1_bm+       B|bm_on|on   
+B|off|on      op_l2off      B|off|off    
+A|bm_on|held  ds1_p1wpar    A|ws_on|held 
+A|bm_on|held  op_s2rel      A|bm_on|off  
+A|bm_on|held  op_l2on       B|bm_on|on   
+B|bm_on|on    ds1_p1wpar    B|ws_on|on   
+B|bm_on|on    op_l2off      B|bm_on|off  
+A|ws_on|held  ds1_boff      A|ready|held 
+A|ws_on|held  ds1_p1wplv    A|ws_off|held 
+A|ws_on|held  op_s2rel      A|ws_on|off  
+A|ws_on|held  op_l2on       B|ws_on|on   
+A|ready|held  ds1_p1m+      A|p1m+|held  
+A|ready|held  op_s2rel      A|ready|off  
+A|ready|held  op_l2on       B|ready|on   
+A|ws_off|held  ds1_boff      A|off|held   
+A|ws_off|held  op_s2rel      A|ws_off|off 
+B|ws_on|on    ds1_p1wplv    A|ws_off|on  
+B|ws_on|on    op_l2off      B|ws_on|off  
+A|ws_on|off   ds1_boff      A|ready|off  
+A|ws_on|off   ds1_p1wplv    A|ws_off|off 
+A|ws_on|off   op_s2act      A|ws_on|held 
+A|ready|off   ds1_p1m+      A|p1m+|off   
+A|ready|off   op_s2act      A|ready|held 
+A|ws_off|off  ds1_boff      A|off|off    
+A|ws_off|off  op_s2act      A|ws_off|held 
+A|p1m+|off    ds1_p1wplv    A|done|off   
+A|p1m+|off    op_s2act      A|p1m+|held  
+A|done|off    ds1_p1off     A|p1m_off|off 
+A|done|off    op_s2act      A|done|held  
+A|p1m+|held   ds1_p1wplv    A|done|held  
+A|p1m+|held   op_s2rel      A|p1m+|off   
+A|p1m+|held   op_l2on       B|p1m+|on    
+A|done|held   ds1_p1off     A|p1m_off|held 
+A|done|held   op_s2rel      A|done|off   
+A|done|held   op_l2on       B|done|on    
+B|p1m+|on     ds1_p1wplv    A|done|on    
+B|p1m+|on     op_l2off      B|p1m+|off   
+A|done|on     ds1_p1off     A|p1m_off|on 
+A|done|on     op_l2off      A|done|off   
+B|p1m+|off    ds1_p1wplv    A|done|off   
+B|p1m+|off    op_s2act      B|p1m+|held  
+B|p1m+|held   ds1_p1wplv    A|done|held  
+B|p1m+|held   op_s2rel      B|p1m+|off   
+A|p1m_off|on  ds1_p1m-      A|ds1_p1m-|on 
+A|p1m_off|on  op_l2off      A|p1m_off|off 
+A|ds1_p1m-|on  ds1_p1s-      A|back|on    
+A|ds1_p1m-|on  op_l2off      A|ds1_p1m-|off 
+A|p1m_off|off  ds1_p1m-      A|ds1_p1m-|off 
+A|p1m_off|off  op_s2act      A|p1m_off|held 
+A|ds1_p1m-|off  ds1_p1s-      A|back|off   
+A|ds1_p1m-|off  op_s2act      A|ds1_p1m-|held 
+A|p1m_off|held  ds1_p1m-      A|ds1_p1m-|held 
+A|p1m_off|held  op_s2rel      A|p1m_off|off 
+A|p1m_off|held  op_l2on       B|p1m_off|on 
+B|p1m_off|on  ds1_p1m-      B|ds1_p1m-|on 
+B|p1m_off|on  op_l2off      B|p1m_off|off 
+A|ds1_p1m-|held  ds1_p1s-      A|back|held  
+A|ds1_p1m-|held  op_s2rel      A|ds1_p1m-|off 
+A|ds1_p1m-|held  op_l2on       B|ds1_p1m-|on 
+B|ds1_p1m-|on  ds1_p1s-      B|back|on    
+B|ds1_p1m-|on  op_l2off      B|ds1_p1m-|off 
+A|back|held   ds1_p1off     A|off|held   
+A|back|held   op_s2rel      A|back|off   
+A|back|held   op_l2on       B|back|on    
+B|back|on     ds1_p1off     B|off|on     
+B|back|on     op_l2off      B|back|off   
+A|back|off    ds1_p1off     A|off|off    
+A|back|off    op_s2act      A|back|held  
+B|back|off    ds1_p1off     B|off|off    
+B|back|off    op_s2act      B|back|held  
+B|off|off     ds1_bm+       B|bm_on|off  
+B|off|off     op_s2act      B|off|held   
+B|back|held   ds1_p1off     B|off|held   
+B|back|held   op_s2rel      B|back|off   
+B|off|held    ds1_bm+       B|bm_on|held 
+B|off|held    op_s2rel      B|off|off    
+B|bm_on|held  ds1_p1wpar    B|ws_on|held 
+B|bm_on|held  op_s2rel      B|bm_on|off  
+B|ws_on|held  ds1_p1wplv    A|ws_off|held 
+B|ws_on|held  op_s2rel      B|ws_on|off  
+B|bm_on|off   ds1_p1wpar    B|ws_on|off  
+B|bm_on|off   op_s2act      B|bm_on|held 
+B|ws_on|off   ds1_p1wplv    A|ws_off|off 
+B|ws_on|off   op_s2act      B|ws_on|held 
+B|ds1_p1m-|off  ds1_p1s-      B|back|off   
+B|ds1_p1m-|off  op_s2act      B|ds1_p1m-|held 
+B|ds1_p1m-|held  ds1_p1s-      B|back|held  
+B|ds1_p1m-|held  op_s2rel      B|ds1_p1m-|off 
+B|p1m_off|off  ds1_p1m-      B|ds1_p1m-|off 
+B|p1m_off|off  op_s2act      B|p1m_off|held 
+B|p1m_off|held  ds1_p1m-      B|ds1_p1m-|held 
+B|p1m_off|held  op_s2rel      B|p1m_off|off 
+A|back|on     ds1_p1off     A|off|on     
+A|back|on     op_l2off      A|back|off   
+A|off|on      ds1_bm+       A|bm_on|on   
+A|off|on      op_l2off      A|off|off    
+A|bm_on|on    ds1_p1wpar    A|ws_on|on   
+A|bm_on|on    op_l2off      A|bm_on|off  
+A|ws_on|on    ds1_boff      A|ready|on   
+A|ws_on|on    ds1_p1wplv    A|ws_off|on  
+A|ws_on|on    op_l2off      A|ws_on|off  
+A|ready|on    ds1_p1m+      A|p1m+|on    
+A|ready|on    op_l2off      A|ready|off  
+A|ws_off|on   ds1_boff      A|off|on     
+A|ws_off|on   op_l2off      A|ws_off|off 
+A|p1m+|on     ds1_p1wplv    A|done|on    
+A|p1m+|on     op_l2off      A|p1m+|off   
+B|done|on     ds1_p1off     B|p1m_off|on 
+B|done|on     op_l2off      B|done|off   
+B|done|off    ds1_p1off     B|p1m_off|off 
+B|done|off    op_s2act      B|done|held  
+B|done|held   ds1_p1off     B|p1m_off|held 
+B|done|held   op_s2rel      B|done|off   
+B|ready|on    ds1_p1m+      B|p1m+|on    
+B|ready|on    op_l2off      B|ready|off  
+B|ready|off   ds1_p1m+      B|p1m+|off   
+B|ready|off   op_s2act      B|ready|held 
+B|ready|held  ds1_p1m+      B|p1m+|held  
+B|ready|held  op_s2rel      B|ready|off  
+</TransRel>
+
+<InitStates>
+A|off|off    
+</InitStates>
+
+<MarkedStates>
+A|off|off     B|off|off    
+</MarkedStates>
+
+
+</Generator>

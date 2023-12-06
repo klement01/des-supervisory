@@ -1,0 +1,203 @@
+<Generator name="H1">
+
+% 
+%  Statistics for H1
+% 
+%  States:        48
+%  Init/Marked:   1/1
+%  Events:        12
+%  Transitions:   160
+%  StateSymbols:  48
+%  Attrib. E/S/T: 4/0/0
+% 
+
+<Alphabet>
+xs1_wpar      xs1_wplv      xs2_wpar      xs2_wplv      op_s1act      op_s1rel     
+op_l1on       +C+           op_l1off      +C+           op_s2act      op_s2rel     
+op_l2on       +C+           op_l2off      +C+          
+</Alphabet>
+
+<States>
+off|off|off|off|off  off|off|off|on|off  off|off|off|off|on  off|off|held|off|off  off|held|off|off|off  on|on|off|off|off 
+off|held|off|on|off  off|held|off|off|on  off|held|held|off|off  on|held|on|off|off  on|on|held|off|off  off|held|held|on|off 
+off|held|held|off|on  on|held|on|off|on  on|on|held|off|on  off|held|held|on|on  off|off|held|off|on  on|off|on|off|on 
+off|off|held|on|on  on|off|on|on|on  off|off|off|on|on  off|held|off|on|on  on|on|off|on|on  done|on|off|off|on 
+done|on|off|on|off  on|on|held|on|on  done|on|held|off|on  done|on|held|on|off  off|off|held|on|off  done|on|held|on|on 
+done|on|off|on|on  on|off|on|on|off  done|off|on|off|off  on|held|on|on|off  done|held|on|off|off  on|held|on|on|on 
+done|held|on|off|on  done|held|on|on|off  done|held|on|on|on  done|off|on|on|off  done|off|on|on|on  done|off|on|off|on 
+done|on|held|off|off  on|on|off|off|on  done|on|off|off|off  on|on|held|on|off  on|on|off|on|off  on|off|on|off|off 
+</States>
+
+<TransRel>
+off|off|off|off|off  xs1_wpar      off|off|off|on|off 
+off|off|off|off|off  xs2_wpar      off|off|off|off|on 
+off|off|off|off|off  op_s1act      off|off|held|off|off 
+off|off|off|off|off  op_s2act      off|held|off|off|off 
+off|off|off|on|off  xs2_wpar      off|off|off|on|on 
+off|off|off|on|off  op_s1act      off|off|held|on|off 
+off|off|off|on|off  op_s2act      off|held|off|on|off 
+off|off|off|off|on  xs1_wpar      off|off|off|on|on 
+off|off|off|off|on  op_s1act      off|off|held|off|on 
+off|off|off|off|on  op_s2act      off|held|off|off|on 
+off|off|held|off|off  xs1_wpar      off|off|held|on|off 
+off|off|held|off|off  xs2_wpar      off|off|held|off|on 
+off|off|held|off|off  op_s1rel      off|off|off|off|off 
+off|off|held|off|off  op_l1on       on|off|on|off|off 
+off|off|held|off|off  op_s2act      off|held|held|off|off 
+off|held|off|off|off  xs1_wpar      off|held|off|on|off 
+off|held|off|off|off  xs2_wpar      off|held|off|off|on 
+off|held|off|off|off  op_s1act      off|held|held|off|off 
+off|held|off|off|off  op_s2rel      off|off|off|off|off 
+off|held|off|off|off  op_l2on       on|on|off|off|off 
+on|on|off|off|off  xs1_wpar      on|on|off|on|off 
+on|on|off|off|off  xs2_wpar      on|on|off|off|on 
+on|on|off|off|off  op_s1act      on|on|held|off|off 
+off|held|off|on|off  xs2_wpar      off|held|off|on|on 
+off|held|off|on|off  op_s1act      off|held|held|on|off 
+off|held|off|on|off  op_s2rel      off|off|off|on|off 
+off|held|off|on|off  op_l2on       on|on|off|on|off 
+off|held|off|off|on  xs1_wpar      off|held|off|on|on 
+off|held|off|off|on  op_s1act      off|held|held|off|on 
+off|held|off|off|on  op_s2rel      off|off|off|off|on 
+off|held|off|off|on  op_l2on       on|on|off|off|on 
+off|held|held|off|off  xs1_wpar      off|held|held|on|off 
+off|held|held|off|off  xs2_wpar      off|held|held|off|on 
+off|held|held|off|off  op_s1rel      off|held|off|off|off 
+off|held|held|off|off  op_l1on       on|held|on|off|off 
+off|held|held|off|off  op_s2rel      off|off|held|off|off 
+off|held|held|off|off  op_l2on       on|on|held|off|off 
+on|held|on|off|off  xs1_wpar      on|held|on|on|off 
+on|held|on|off|off  xs2_wpar      on|held|on|off|on 
+on|held|on|off|off  op_s2rel      on|off|on|off|off 
+on|on|held|off|off  xs1_wpar      on|on|held|on|off 
+on|on|held|off|off  xs2_wpar      on|on|held|off|on 
+on|on|held|off|off  op_s1rel      on|on|off|off|off 
+off|held|held|on|off  xs2_wpar      off|held|held|on|on 
+off|held|held|on|off  op_s1rel      off|held|off|on|off 
+off|held|held|on|off  op_l1on       on|held|on|on|off 
+off|held|held|on|off  op_s2rel      off|off|held|on|off 
+off|held|held|on|off  op_l2on       on|on|held|on|off 
+off|held|held|off|on  xs1_wpar      off|held|held|on|on 
+off|held|held|off|on  op_s1rel      off|held|off|off|on 
+off|held|held|off|on  op_l1on       on|held|on|off|on 
+off|held|held|off|on  op_s2rel      off|off|held|off|on 
+off|held|held|off|on  op_l2on       on|on|held|off|on 
+on|held|on|off|on  xs1_wpar      on|held|on|on|on 
+on|held|on|off|on  xs2_wplv      done|held|on|off|off 
+on|held|on|off|on  op_s2rel      on|off|on|off|on 
+on|on|held|off|on  xs1_wpar      on|on|held|on|on 
+on|on|held|off|on  xs2_wplv      done|on|held|off|off 
+on|on|held|off|on  op_s1rel      on|on|off|off|on 
+off|held|held|on|on  op_s1rel      off|held|off|on|on 
+off|held|held|on|on  op_l1on       on|held|on|on|on 
+off|held|held|on|on  op_s2rel      off|off|held|on|on 
+off|held|held|on|on  op_l2on       on|on|held|on|on 
+off|off|held|off|on  xs1_wpar      off|off|held|on|on 
+off|off|held|off|on  op_s1rel      off|off|off|off|on 
+off|off|held|off|on  op_l1on       on|off|on|off|on 
+off|off|held|off|on  op_s2act      off|held|held|off|on 
+on|off|on|off|on  xs1_wpar      on|off|on|on|on 
+on|off|on|off|on  xs2_wplv      done|off|on|off|off 
+on|off|on|off|on  op_s2act      on|held|on|off|on 
+off|off|held|on|on  op_s1rel      off|off|off|on|on 
+off|off|held|on|on  op_l1on       on|off|on|on|on 
+off|off|held|on|on  op_s2act      off|held|held|on|on 
+on|off|on|on|on  xs1_wplv      done|off|on|off|on 
+on|off|on|on|on  xs2_wplv      done|off|on|on|off 
+on|off|on|on|on  op_s2act      on|held|on|on|on 
+off|off|off|on|on  op_s1act      off|off|held|on|on 
+off|off|off|on|on  op_s2act      off|held|off|on|on 
+off|held|off|on|on  op_s1act      off|held|held|on|on 
+off|held|off|on|on  op_s2rel      off|off|off|on|on 
+off|held|off|on|on  op_l2on       on|on|off|on|on 
+on|on|off|on|on  xs1_wplv      done|on|off|off|on 
+on|on|off|on|on  xs2_wplv      done|on|off|on|off 
+on|on|off|on|on  op_s1act      on|on|held|on|on 
+done|on|off|off|on  xs1_wpar      done|on|off|on|on 
+done|on|off|off|on  op_s1act      done|on|held|off|on 
+done|on|off|off|on  op_l2off      off|off|off|off|on 
+done|on|off|on|off  xs2_wpar      done|on|off|on|on 
+done|on|off|on|off  op_s1act      done|on|held|on|off 
+done|on|off|on|off  op_l2off      off|off|off|on|off 
+on|on|held|on|on  xs1_wplv      done|on|held|off|on 
+on|on|held|on|on  xs2_wplv      done|on|held|on|off 
+on|on|held|on|on  op_s1rel      on|on|off|on|on 
+done|on|held|off|on  xs1_wpar      done|on|held|on|on 
+done|on|held|off|on  op_s1rel      done|on|off|off|on 
+done|on|held|off|on  op_l2off      off|off|held|off|on 
+done|on|held|on|off  xs2_wpar      done|on|held|on|on 
+done|on|held|on|off  op_s1rel      done|on|off|on|off 
+done|on|held|on|off  op_l2off      off|off|held|on|off 
+off|off|held|on|off  xs2_wpar      off|off|held|on|on 
+off|off|held|on|off  op_s1rel      off|off|off|on|off 
+off|off|held|on|off  op_l1on       on|off|on|on|off 
+off|off|held|on|off  op_s2act      off|held|held|on|off 
+done|on|held|on|on  op_s1rel      done|on|off|on|on 
+done|on|held|on|on  op_l2off      off|off|held|on|on 
+done|on|off|on|on  op_s1act      done|on|held|on|on 
+done|on|off|on|on  op_l2off      off|off|off|on|on 
+on|off|on|on|off  xs1_wplv      done|off|on|off|off 
+on|off|on|on|off  xs2_wpar      on|off|on|on|on 
+on|off|on|on|off  op_s2act      on|held|on|on|off 
+done|off|on|off|off  xs1_wpar      done|off|on|on|off 
+done|off|on|off|off  xs2_wpar      done|off|on|off|on 
+done|off|on|off|off  op_l1off      off|off|off|off|off 
+done|off|on|off|off  op_s2act      done|held|on|off|off 
+on|held|on|on|off  xs1_wplv      done|held|on|off|off 
+on|held|on|on|off  xs2_wpar      on|held|on|on|on 
+on|held|on|on|off  op_s2rel      on|off|on|on|off 
+done|held|on|off|off  xs1_wpar      done|held|on|on|off 
+done|held|on|off|off  xs2_wpar      done|held|on|off|on 
+done|held|on|off|off  op_l1off      off|held|off|off|off 
+done|held|on|off|off  op_s2rel      done|off|on|off|off 
+on|held|on|on|on  xs1_wplv      done|held|on|off|on 
+on|held|on|on|on  xs2_wplv      done|held|on|on|off 
+on|held|on|on|on  op_s2rel      on|off|on|on|on 
+done|held|on|off|on  xs1_wpar      done|held|on|on|on 
+done|held|on|off|on  op_l1off      off|held|off|off|on 
+done|held|on|off|on  op_s2rel      done|off|on|off|on 
+done|held|on|on|off  xs2_wpar      done|held|on|on|on 
+done|held|on|on|off  op_l1off      off|held|off|on|off 
+done|held|on|on|off  op_s2rel      done|off|on|on|off 
+done|held|on|on|on  op_l1off      off|held|off|on|on 
+done|held|on|on|on  op_s2rel      done|off|on|on|on 
+done|off|on|on|off  xs2_wpar      done|off|on|on|on 
+done|off|on|on|off  op_l1off      off|off|off|on|off 
+done|off|on|on|off  op_s2act      done|held|on|on|off 
+done|off|on|on|on  op_l1off      off|off|off|on|on 
+done|off|on|on|on  op_s2act      done|held|on|on|on 
+done|off|on|off|on  xs1_wpar      done|off|on|on|on 
+done|off|on|off|on  op_l1off      off|off|off|off|on 
+done|off|on|off|on  op_s2act      done|held|on|off|on 
+done|on|held|off|off  xs1_wpar      done|on|held|on|off 
+done|on|held|off|off  xs2_wpar      done|on|held|off|on 
+done|on|held|off|off  op_s1rel      done|on|off|off|off 
+done|on|held|off|off  op_l2off      off|off|held|off|off 
+on|on|off|off|on  xs1_wpar      on|on|off|on|on 
+on|on|off|off|on  xs2_wplv      done|on|off|off|off 
+on|on|off|off|on  op_s1act      on|on|held|off|on 
+done|on|off|off|off  xs1_wpar      done|on|off|on|off 
+done|on|off|off|off  xs2_wpar      done|on|off|off|on 
+done|on|off|off|off  op_s1act      done|on|held|off|off 
+done|on|off|off|off  op_l2off      off|off|off|off|off 
+on|on|held|on|off  xs1_wplv      done|on|held|off|off 
+on|on|held|on|off  xs2_wpar      on|on|held|on|on 
+on|on|held|on|off  op_s1rel      on|on|off|on|off 
+on|on|off|on|off  xs1_wplv      done|on|off|off|off 
+on|on|off|on|off  xs2_wpar      on|on|off|on|on 
+on|on|off|on|off  op_s1act      on|on|held|on|off 
+on|off|on|off|off  xs1_wpar      on|off|on|on|off 
+on|off|on|off|off  xs2_wpar      on|off|on|off|on 
+on|off|on|off|off  op_s2act      on|held|on|off|off 
+</TransRel>
+
+<InitStates>
+off|off|off|off|off 
+</InitStates>
+
+<MarkedStates>
+off|off|off|off|off 
+</MarkedStates>
+
+
+</Generator>
