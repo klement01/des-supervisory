@@ -1,0 +1,202 @@
+<Generator name="H3">
+
+% 
+%  Statistics for H3
+% 
+%  States:        85
+%  Init/Marked:   1/2
+%  Events:        19
+%  Transitions:   150
+%  StateSymbols:  85
+%  Attrib. E/S/T: 10/0/0
+% 
+
+<Alphabet>
+sf1_fdon      +C+           sf1_fdoff     +C+           sf1_fdhome    sf1_wpar     
+sf1_wplv      pm1_bm+       +C+           pm1_bm-       +C+           pm1_boff     
++C+           pm1_wpar      pm1_wplv      pm1_pm+       +C+           pm1_pm-      
++C+           pm1_poff      +C+           pm1_mon       +C+           pm1_moff     
++C+           pm1_ps-       pm1_ps+       pm1_mrqu      pm1_mack     
+</Alphabet>
+
+<States>
+A|off|off     A|ready|off   A|on|off      B|on2|off     B|on2|bm+     B|done|off   
+B|done|bm+    B|off|off     B|off|bm+     B|ready|off   B|ready|bm+   B|on|off     
+B|on|bm+      B|on|ws_on    B|on|waiting  B|on|pm+      B|on|ready    B|on|poff    
+B|on|mon      B|on|done     B|on|moff     B|on|pm-      B|on|north    B|on|waiting2 
+B|on|bm+2     A|on|ws_off   B|on2|ws_off  B|done|ws_off  B|off|ws_off  B|ready|ws_off 
+B|on|ws_off   B|ready|ws_on  B|ready|waiting  B|ready|pm+   B|ready|ready  B|ready|poff 
+B|ready|mon   B|ready|done  B|ready|moff  B|ready|pm-   B|ready|north  B|ready|waiting2 
+B|ready|bm+2  A|ready|ws_off  B|off|ws_on   B|off|waiting  B|off|pm+     B|off|ready  
+B|off|poff    B|off|mon     B|off|done    B|off|moff    B|off|pm-     B|off|north  
+B|off|waiting2  B|off|bm+2    A|off|ws_off  B|done|ws_on  B|done|waiting  B|done|pm+   
+B|done|ready  B|done|poff   B|done|mon    B|done|done   B|done|moff   B|done|pm-   
+B|done|north  B|done|waiting2  B|done|bm+2   A|done|ws_off  A|done|off    B|on2|ws_on  
+B|on2|waiting  B|on2|pm+     B|on2|ready   B|on2|poff    B|on2|mon     B|on2|done   
+B|on2|moff    B|on2|pm-     B|on2|north   B|on2|waiting2  B|on2|bm+2    A|on2|ws_off 
+A|on2|off    
+</States>
+
+<TransRel>
+A|off|off     sf1_wpar      A|ready|off  
+A|ready|off   sf1_fdon      A|on|off     
+A|on|off      sf1_wplv      B|on2|off    
+B|on2|off     sf1_fdhome    B|done|off   
+B|on2|off     pm1_bm+       B|on2|bm+    
+B|on2|bm+     sf1_fdhome    B|done|bm+   
+B|on2|bm+     pm1_wpar      B|on2|ws_on  
+B|done|off    sf1_fdoff     B|off|off    
+B|done|off    pm1_bm+       B|done|bm+   
+B|done|bm+    sf1_fdoff     B|off|bm+    
+B|done|bm+    pm1_wpar      B|done|ws_on 
+B|off|off     sf1_wpar      B|ready|off  
+B|off|off     pm1_bm+       B|off|bm+    
+B|off|bm+     sf1_wpar      B|ready|bm+  
+B|off|bm+     pm1_wpar      B|off|ws_on  
+B|ready|off   sf1_fdon      B|on|off     
+B|ready|off   pm1_bm+       B|ready|bm+  
+B|ready|bm+   sf1_fdon      B|on|bm+     
+B|ready|bm+   pm1_wpar      B|ready|ws_on 
+B|on|off      pm1_bm+       B|on|bm+     
+B|on|bm+      pm1_wpar      B|on|ws_on   
+B|on|ws_on    pm1_boff      B|on|waiting 
+B|on|waiting  pm1_pm+       B|on|pm+     
+B|on|pm+      pm1_mrqu      B|on|ready   
+B|on|ready    pm1_poff      B|on|poff    
+B|on|poff     pm1_mon       B|on|mon     
+B|on|mon      pm1_mack      B|on|done    
+B|on|done     pm1_moff      B|on|moff    
+B|on|moff     pm1_pm-       B|on|pm-     
+B|on|pm-      pm1_ps-       B|on|north   
+B|on|north    pm1_poff      B|on|waiting2 
+B|on|waiting2  pm1_bm+       B|on|bm+2    
+B|on|bm+2     pm1_wplv      A|on|ws_off  
+A|on|ws_off   sf1_wplv      B|on2|ws_off 
+A|on|ws_off   pm1_boff      A|on|off     
+B|on2|ws_off  sf1_fdhome    B|done|ws_off 
+B|on2|ws_off  pm1_boff      B|on2|off    
+B|done|ws_off  sf1_fdoff     B|off|ws_off 
+B|done|ws_off  pm1_boff      B|done|off   
+B|off|ws_off  sf1_wpar      B|ready|ws_off 
+B|off|ws_off  pm1_boff      B|off|off    
+B|ready|ws_off  sf1_fdon      B|on|ws_off  
+B|ready|ws_off  pm1_boff      B|ready|off  
+B|on|ws_off   pm1_boff      B|on|off     
+B|ready|ws_on  sf1_fdon      B|on|ws_on   
+B|ready|ws_on  pm1_boff      B|ready|waiting 
+B|ready|waiting  sf1_fdon      B|on|waiting 
+B|ready|waiting  pm1_pm+       B|ready|pm+  
+B|ready|pm+   sf1_fdon      B|on|pm+     
+B|ready|pm+   pm1_mrqu      B|ready|ready 
+B|ready|ready  sf1_fdon      B|on|ready   
+B|ready|ready  pm1_poff      B|ready|poff 
+B|ready|poff  sf1_fdon      B|on|poff    
+B|ready|poff  pm1_mon       B|ready|mon  
+B|ready|mon   sf1_fdon      B|on|mon     
+B|ready|mon   pm1_mack      B|ready|done 
+B|ready|done  sf1_fdon      B|on|done    
+B|ready|done  pm1_moff      B|ready|moff 
+B|ready|moff  sf1_fdon      B|on|moff    
+B|ready|moff  pm1_pm-       B|ready|pm-  
+B|ready|pm-   sf1_fdon      B|on|pm-     
+B|ready|pm-   pm1_ps-       B|ready|north 
+B|ready|north  sf1_fdon      B|on|north   
+B|ready|north  pm1_poff      B|ready|waiting2 
+B|ready|waiting2  sf1_fdon      B|on|waiting2 
+B|ready|waiting2  pm1_bm+       B|ready|bm+2 
+B|ready|bm+2  sf1_fdon      B|on|bm+2    
+B|ready|bm+2  pm1_wplv      A|ready|ws_off 
+A|ready|ws_off  sf1_fdon      A|on|ws_off  
+A|ready|ws_off  pm1_boff      A|ready|off  
+B|off|ws_on   sf1_wpar      B|ready|ws_on 
+B|off|ws_on   pm1_boff      B|off|waiting 
+B|off|waiting  sf1_wpar      B|ready|waiting 
+B|off|waiting  pm1_pm+       B|off|pm+    
+B|off|pm+     sf1_wpar      B|ready|pm+  
+B|off|pm+     pm1_mrqu      B|off|ready  
+B|off|ready   sf1_wpar      B|ready|ready 
+B|off|ready   pm1_poff      B|off|poff   
+B|off|poff    sf1_wpar      B|ready|poff 
+B|off|poff    pm1_mon       B|off|mon    
+B|off|mon     sf1_wpar      B|ready|mon  
+B|off|mon     pm1_mack      B|off|done   
+B|off|done    sf1_wpar      B|ready|done 
+B|off|done    pm1_moff      B|off|moff   
+B|off|moff    sf1_wpar      B|ready|moff 
+B|off|moff    pm1_pm-       B|off|pm-    
+B|off|pm-     sf1_wpar      B|ready|pm-  
+B|off|pm-     pm1_ps-       B|off|north  
+B|off|north   sf1_wpar      B|ready|north 
+B|off|north   pm1_poff      B|off|waiting2 
+B|off|waiting2  sf1_wpar      B|ready|waiting2 
+B|off|waiting2  pm1_bm+       B|off|bm+2   
+B|off|bm+2    sf1_wpar      B|ready|bm+2 
+B|off|bm+2    pm1_wplv      A|off|ws_off 
+A|off|ws_off  sf1_wpar      A|ready|ws_off 
+A|off|ws_off  pm1_boff      A|off|off    
+B|done|ws_on  sf1_fdoff     B|off|ws_on  
+B|done|ws_on  pm1_boff      B|done|waiting 
+B|done|waiting  sf1_fdoff     B|off|waiting 
+B|done|waiting  pm1_pm+       B|done|pm+   
+B|done|pm+    sf1_fdoff     B|off|pm+    
+B|done|pm+    pm1_mrqu      B|done|ready 
+B|done|ready  sf1_fdoff     B|off|ready  
+B|done|ready  pm1_poff      B|done|poff  
+B|done|poff   sf1_fdoff     B|off|poff   
+B|done|poff   pm1_mon       B|done|mon   
+B|done|mon    sf1_fdoff     B|off|mon    
+B|done|mon    pm1_mack      B|done|done  
+B|done|done   sf1_fdoff     B|off|done   
+B|done|done   pm1_moff      B|done|moff  
+B|done|moff   sf1_fdoff     B|off|moff   
+B|done|moff   pm1_pm-       B|done|pm-   
+B|done|pm-    sf1_fdoff     B|off|pm-    
+B|done|pm-    pm1_ps-       B|done|north 
+B|done|north  sf1_fdoff     B|off|north  
+B|done|north  pm1_poff      B|done|waiting2 
+B|done|waiting2  sf1_fdoff     B|off|waiting2 
+B|done|waiting2  pm1_bm+       B|done|bm+2  
+B|done|bm+2   sf1_fdoff     B|off|bm+2   
+B|done|bm+2   pm1_wplv      A|done|ws_off 
+A|done|ws_off  sf1_fdoff     A|off|ws_off 
+A|done|ws_off  pm1_boff      A|done|off   
+A|done|off    sf1_fdoff     A|off|off    
+B|on2|ws_on   sf1_fdhome    B|done|ws_on 
+B|on2|ws_on   pm1_boff      B|on2|waiting 
+B|on2|waiting  sf1_fdhome    B|done|waiting 
+B|on2|waiting  pm1_pm+       B|on2|pm+    
+B|on2|pm+     sf1_fdhome    B|done|pm+   
+B|on2|pm+     pm1_mrqu      B|on2|ready  
+B|on2|ready   sf1_fdhome    B|done|ready 
+B|on2|ready   pm1_poff      B|on2|poff   
+B|on2|poff    sf1_fdhome    B|done|poff  
+B|on2|poff    pm1_mon       B|on2|mon    
+B|on2|mon     sf1_fdhome    B|done|mon   
+B|on2|mon     pm1_mack      B|on2|done   
+B|on2|done    sf1_fdhome    B|done|done  
+B|on2|done    pm1_moff      B|on2|moff   
+B|on2|moff    sf1_fdhome    B|done|moff  
+B|on2|moff    pm1_pm-       B|on2|pm-    
+B|on2|pm-     sf1_fdhome    B|done|pm-   
+B|on2|pm-     pm1_ps-       B|on2|north  
+B|on2|north   sf1_fdhome    B|done|north 
+B|on2|north   pm1_poff      B|on2|waiting2 
+B|on2|waiting2  sf1_fdhome    B|done|waiting2 
+B|on2|waiting2  pm1_bm+       B|on2|bm+2   
+B|on2|bm+2    sf1_fdhome    B|done|bm+2  
+B|on2|bm+2    pm1_wplv      A|on2|ws_off 
+A|on2|ws_off  sf1_fdhome    A|done|ws_off 
+A|on2|ws_off  pm1_boff      A|on2|off    
+A|on2|off     sf1_fdhome    A|done|off   
+</TransRel>
+
+<InitStates>
+A|off|off    
+</InitStates>
+
+<MarkedStates>
+A|off|off     B|off|off    
+</MarkedStates>
+
+
+</Generator>

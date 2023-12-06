@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE ModbusDevice SYSTEM "http://www.faudes.org/dtd/1.0/modbusdevice.dtd">
+<ModbusDevice name="LineSupervisor">
+<TimeScale value="10"/>
+<SampleInterval value="1000"/>
+<SynchronousWrite value="true"/>
+<Role value="master"/>
+<SlaveAddress value="localhost:1502"/>
+<RemoteImage>
+<Inputs mbaddr="0" count="38"/>
+<Outputs mbaddr="0" count="38"/>
+</RemoteImage>
+<EventConfiguration>
+<Event name="ds1_p1s+" iotype="input">
+<Triggers>
+<PositiveEdge address="4"/>
+</Triggers>
+</Event>
+<Event name="ds1_p1s-" iotype="input">
+<Triggers>
+<PositiveEdge address="5"/>
+</Triggers>
+</Event>
+<Event name="ds1_p1wpar" iotype="input">
+<Triggers>
+<PositiveEdge address="6"/>
+</Triggers>
+</Event>
+<Event name="ds1_p1wplv" iotype="input">
+<Triggers>
+<NegativeEdge address="6"/>
+</Triggers>
+</Event>
+<Event name="op_s1act" iotype="input">
+<Triggers>
+<PositiveEdge address="11"/>
+</Triggers>
+</Event>
+<Event name="op_s1rel" iotype="input">
+<Triggers>
+<NegativeEdge address="11"/>
+</Triggers>
+</Event>
+<Event name="op_s2act" iotype="input">
+<Triggers>
+<PositiveEdge address="12"/>
+</Triggers>
+</Event>
+<Event name="op_s2rel" iotype="input">
+<Triggers>
+<NegativeEdge address="12"/>
+</Triggers>
+</Event>
+<Event name="op_s3act" iotype="input">
+<Triggers>
+<PositiveEdge address="13"/>
+</Triggers>
+</Event>
+<Event name="op_s3rel" iotype="input">
+<Triggers>
+<NegativeEdge address="13"/>
+</Triggers>
+</Event>
+<Event name="op_s4act" iotype="input">
+<Triggers>
+<PositiveEdge address="14"/>
+</Triggers>
+</Event>
+<Event name="op_s4rel" iotype="input">
+<Triggers>
+<NegativeEdge address="14"/>
+</Triggers>
+</Event>
+<Event name="pm1_mack" iotype="input">
+<Triggers>
+<NegativeEdge address="18"/>
+</Triggers>
+</Event>
+<Event name="pm1_mrqu" iotype="input">
+<Triggers>
+<PositiveEdge address="18"/>
+</Triggers>
+</Event>
+<Event name="pm1_ps+" iotype="input">
+<Triggers>
+<PositiveEdge address="21"/>
+</Triggers>
+</Event>
+<Event name="pm1_ps-" iotype="input">
+<Triggers>
+<NegativeEdge address="22"/>
+</Triggers>
+</Event>
+<Event name="pm1_wpar" iotype="input">
+<Triggers>
+<PositiveEdge address="23"/>
+</Triggers>
+</Event>
+<Event name="pm1_wplv" iotype="input">
+<Triggers>
+<NegativeEdge address="23"/>
+</Triggers>
+</Event>
+<Event name="pm2_mack" iotype="input">
+<Triggers>
+<NegativeEdge address="27"/>
+</Triggers>
+</Event>
+<Event name="pm2_mrqu" iotype="input">
+<Triggers>
+<PositiveEdge address="27"/>
+</Triggers>
+</Event>
+<Event name="pm2_ps+" iotype="input">
+<Triggers>
+<PositiveEdge address="30"/>
+</Triggers>
+</Event>
+<Event name="pm2_ps-" iotype="input">
+<Triggers>
+<NegativeEdge address="31"/>
+</Triggers>
+</Event>
+<Event name="pm2_wpar" iotype="input">
+<Triggers>
+<PositiveEdge address="32"/>
+</Triggers>
+</Event>
+<Event name="pm2_wplv" iotype="input">
+<Triggers>
+<NegativeEdge address="32"/>
+</Triggers>
+</Event>
+<Event name="sf1_fdhome" iotype="input">
+<Triggers>
+<PositiveEdge address="34"/>
+</Triggers>
+</Event>
+<Event name="sf1_wpar" iotype="input">
+<Triggers>
+<PositiveEdge address="35"/>
+</Triggers>
+</Event>
+<Event name="sf1_wplv" iotype="input">
+<Triggers>
+<NegativeEdge address="35"/>
+</Triggers>
+</Event>
+<Event name="xs1_wpar" iotype="input">
+<Triggers>
+<PositiveEdge address="36"/>
+</Triggers>
+</Event>
+<Event name="xs1_wplv" iotype="input">
+<Triggers>
+<NegativeEdge address="36"/>
+</Triggers>
+</Event>
+<Event name="xs2_wpar" iotype="input">
+<Triggers>
+<PositiveEdge address="37"/>
+</Triggers>
+</Event>
+<Event name="xs2_wplv" iotype="input">
+<Triggers>
+<NegativeEdge address="37"/>
+</Triggers>
+</Event>
+<Event name="ds1_bm+" iotype="output">
+<Actions>
+<Clr address="1"/>
+<Set address="0"/>
+</Actions>
+</Event>
+<Event name="ds1_bm-" iotype="output">
+<Actions>
+<Clr address="0"/>
+<Set address="1"/>
+</Actions>
+</Event>
+<Event name="ds1_boff" iotype="output">
+<Actions>
+<Clr address="0"/>
+<Clr address="1"/>
+</Actions>
+</Event>
+<Event name="ds1_p1m+" iotype="output">
+<Actions>
+<Clr address="3"/>
+<Set address="2"/>
+</Actions>
+</Event>
+<Event name="ds1_p1m-" iotype="output">
+<Actions>
+<Clr address="2"/>
+<Set address="3"/>
+</Actions>
+</Event>
+<Event name="ds1_p1off" iotype="output">
+<Actions>
+<Clr address="2"/>
+<Clr address="3"/>
+</Actions>
+</Event>
+<Event name="op_l1off" iotype="output">
+<Actions>
+<Clr address="7"/>
+</Actions>
+</Event>
+<Event name="op_l1on" iotype="output">
+<Actions>
+<Set address="7"/>
+</Actions>
+</Event>
+<Event name="op_l2off" iotype="output">
+<Actions>
+<Clr address="8"/>
+</Actions>
+</Event>
+<Event name="op_l2on" iotype="output">
+<Actions>
+<Set address="8"/>
+</Actions>
+</Event>
+<Event name="op_l3off" iotype="output">
+<Actions>
+<Clr address="9"/>
+</Actions>
+</Event>
+<Event name="op_l3on" iotype="output">
+<Actions>
+<Set address="9"/>
+</Actions>
+</Event>
+<Event name="op_l4off" iotype="output">
+<Actions>
+<Clr address="10"/>
+</Actions>
+</Event>
+<Event name="op_l4on" iotype="output">
+<Actions>
+<Set address="10"/>
+</Actions>
+</Event>
+<Event name="pm1_bm+" iotype="output">
+<Actions>
+<Clr address="16"/>
+<Set address="15"/>
+</Actions>
+</Event>
+<Event name="pm1_bm-" iotype="output">
+<Actions>
+<Clr address="15"/>
+<Set address="16"/>
+</Actions>
+</Event>
+<Event name="pm1_boff" iotype="output">
+<Actions>
+<Clr address="15"/>
+<Clr address="16"/>
+</Actions>
+</Event>
+<Event name="pm1_moff" iotype="output">
+<Actions>
+<Clr address="17"/>
+</Actions>
+</Event>
+<Event name="pm1_mon" iotype="output">
+<Actions>
+<Set address="17"/>
+</Actions>
+</Event>
+<Event name="pm1_pm+" iotype="output">
+<Actions>
+<Clr address="20"/>
+<Set address="19"/>
+</Actions>
+</Event>
+<Event name="pm1_pm-" iotype="output">
+<Actions>
+<Clr address="19"/>
+<Set address="20"/>
+</Actions>
+</Event>
+<Event name="pm1_poff" iotype="output">
+<Actions>
+<Clr address="19"/>
+<Clr address="20"/>
+</Actions>
+</Event>
+<Event name="pm2_bm+" iotype="output">
+<Actions>
+<Clr address="25"/>
+<Set address="24"/>
+</Actions>
+</Event>
+<Event name="pm2_bm-" iotype="output">
+<Actions>
+<Clr address="24"/>
+<Set address="25"/>
+</Actions>
+</Event>
+<Event name="pm2_boff" iotype="output">
+<Actions>
+<Clr address="24"/>
+<Clr address="25"/>
+</Actions>
+</Event>
+<Event name="pm2_moff" iotype="output">
+<Actions>
+<Clr address="26"/>
+</Actions>
+</Event>
+<Event name="pm2_mon" iotype="output">
+<Actions>
+<Set address="26"/>
+</Actions>
+</Event>
+<Event name="pm2_pm+" iotype="output">
+<Actions>
+<Clr address="29"/>
+<Set address="28"/>
+</Actions>
+</Event>
+<Event name="pm2_pm-" iotype="output">
+<Actions>
+<Clr address="28"/>
+<Set address="29"/>
+</Actions>
+</Event>
+<Event name="pm2_poff" iotype="output">
+<Actions>
+<Clr address="28"/>
+<Clr address="29"/>
+</Actions>
+</Event>
+<Event name="sf1_fdoff" iotype="output">
+<Actions>
+<Clr address="33"/>
+</Actions>
+</Event>
+<Event name="sf1_fdon" iotype="output">
+<Actions>
+<Set address="33"/>
+</Actions>
+</Event>
+</EventConfiguration>
+</ModbusDevice>
