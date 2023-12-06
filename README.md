@@ -6,7 +6,7 @@ Implements local supervisory control using modular supervisory systems designed 
 
 The example folder contains the production line model and supervisors created as part of the original assignment and used to demonstrate des-supervisory. The production lines works by selecting one of two items using buttons 1 and 2 in the FlexFact operator panel. One item goes through one process and exits the first slide after being pushed, while the second item goes through both machines and exits the second slide.
 
-![Image of the production line.](example/Line.svg)
+![Image of the production line.](example/Line.png)
 
 ## Contents
 
