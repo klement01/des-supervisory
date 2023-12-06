@@ -1,6 +1,6 @@
 # Supervisory
 
-Implements local supervisory control using modular supervisory systems designed in and exported from [DESTool](https://fgdes.tf.fau.de/destool/index.html) and uses Modbus TCP to control a production line model simulated in [FlexFact](https://www.fgdes.tf.fau.de/flexfact.html). Made for an assignement in a Discrete Event Systems class at [UFRGS](www.ufrgs.br).
+Implements local supervisory control using modular supervisory systems designed in and exported from [DESTool](https://fgdes.tf.fau.de/destool/index.html) and uses Modbus TCP to control a production line model simulated in [FlexFact](https://www.fgdes.tf.fau.de/flexfact.html). Made for an assignment in a Discrete Event Systems class at [UFRGS](http://www.ufrgs.br/ufrgs/inicial).
 
 # Example
 
